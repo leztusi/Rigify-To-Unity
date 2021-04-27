@@ -35,11 +35,12 @@ class UnityMecanim_Convert2Unity(bpy.types.Operator):
         ob = bpy.context.object
         
         bpy.ops.object.mode_set(mode='OBJECT')
-
-        if 'DEF-breast.L' in ob.data.bones :
-            ob.data.bones['DEF-breast.L'].use_deform = False
-        if 'DEF-breast.R' in ob.data.bones :
-            ob.data.bones['DEF-breast.R'].use_deform = False
+        
+        #Retain breast bones
+        #if 'DEF-breast.L' in ob.data.bones :
+        #    ob.data.bones['DEF-breast.L'].use_deform = False
+        #if 'DEF-breast.R' in ob.data.bones :
+        #    ob.data.bones['DEF-breast.R'].use_deform = False
 
         if 'DEF-pelvis.L' in ob.data.bones :
             ob.data.bones['DEF-pelvis.L'].use_deform = False
@@ -47,6 +48,10 @@ class UnityMecanim_Convert2Unity(bpy.types.Operator):
             ob.data.bones['DEF-pelvis.R'].use_deform = False
 
         bpy.ops.object.mode_set(mode='EDIT')
+        
+        #Set breast bone parent from ORG to DEF
+        ob.data.edit_bones['DEF-breast.L'].parent = ob.data.edit_bones['DEF-spine.003']
+        ob.data.edit_bones['DEF-breast.R'].parent = ob.data.edit_bones['DEF-spine.003']
         
         ob.data.edit_bones['DEF-shoulder.L'].parent = ob.data.edit_bones['DEF-spine.003']
         ob.data.edit_bones['DEF-shoulder.R'].parent = ob.data.edit_bones['DEF-spine.003']
@@ -89,7 +94,8 @@ class UnityMecanim_Convert2Unity(bpy.types.Operator):
             ob.data.edit_bones.remove(ob.data.edit_bones['DEF-pelvis.L'])
         if 'DEF-pelvis.R' in ob.data.bones :
             ob.data.edit_bones.remove(ob.data.edit_bones['DEF-pelvis.R'])
-
+        
+        #Retain breast bones
         #if 'DEF-breast.L' in ob.data.bones :
         #    ob.data.edit_bones.remove(ob.data.edit_bones['DEF-breast.L'])
         #if 'DEF-breast.R' in ob.data.bones :
