@@ -20,3 +20,4 @@ This script basicaly follows this tutorial
 https://docs.unity3d.com/560/Documentation/Manual/BlenderAndRigify.html
 
 Script inspired by legacy https://github.com/trynyty/Rigify_DeformBones  
+Forked from https://github.com/AlexLemminG/Rigify-To-Unity
