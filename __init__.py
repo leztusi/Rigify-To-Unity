@@ -42,10 +42,10 @@ class UnityMecanim_Convert2Unity(bpy.types.Operator):
         #if 'DEF-breast.R' in ob.data.bones :
         #    ob.data.bones['DEF-breast.R'].use_deform = False
 
-        if 'DEF-pelvis.L' in ob.data.bones :
-            ob.data.bones['DEF-pelvis.L'].use_deform = False
-        if 'DEF-pelvis.R' in ob.data.bones :
-            ob.data.bones['DEF-pelvis.R'].use_deform = False
+        if 'DEF-breast.L' in ob.data.bones :
+            ob.data.edit_bones['DEF-breast.L'].parent = ob.data.edit_bones['DEF-spine.003']
+        if 'DEF-breast.R' in ob.data.bones :
+            ob.data.edit_bones['DEF-breast.R'].parent = ob.data.edit_bones['DEF-spine.003']
 
         bpy.ops.object.mode_set(mode='EDIT')
         
