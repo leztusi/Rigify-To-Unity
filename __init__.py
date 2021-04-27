@@ -90,10 +90,10 @@ class UnityMecanim_Convert2Unity(bpy.types.Operator):
         if 'DEF-pelvis.R' in ob.data.bones :
             ob.data.edit_bones.remove(ob.data.edit_bones['DEF-pelvis.R'])
 
-        if 'DEF-breast.L' in ob.data.bones :
-            ob.data.edit_bones.remove(ob.data.edit_bones['DEF-breast.L'])
-        if 'DEF-breast.R' in ob.data.bones :
-            ob.data.edit_bones.remove(ob.data.edit_bones['DEF-breast.R'])
+        #if 'DEF-breast.L' in ob.data.bones :
+        #    ob.data.edit_bones.remove(ob.data.edit_bones['DEF-breast.L'])
+        #if 'DEF-breast.R' in ob.data.bones :
+        #    ob.data.edit_bones.remove(ob.data.edit_bones['DEF-breast.R'])
 
         bpy.ops.object.mode_set(mode='OBJECT')
 
