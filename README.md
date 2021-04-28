@@ -1,5 +1,7 @@
 # RigifyToUnity
-Converts Rigify rig to Humanoid compatible  
+Converts Rigify rig to Humanoid compatible
+
+Lez's forked version keep the breast bones, and removed the bendy bones that aren't supported by Unity.
 
 **_Installation:_** 
 - Download this repo as zip archive
